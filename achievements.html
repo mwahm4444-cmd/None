@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إنجازاتُنا ↫🫀 | ♡</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:#fff;
+  color:#421927;
+  overflow-x:hidden;
+  transition:.4s ease;
+}
+
+/* =========================
+   فيديو الخلفية
+========================= */
+
+.hero{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
+
+.hero video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.5);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(80,15,40,0.28);
+}
+
+
+/* =========================
+   المقدمة
+========================= */
+
+.hero-content{
+  text-align:center;
+  padding-top:120px;
+  color:#fff;
+  min-height:100vh;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.hero-content h1{
+  font-size:2.8em;
+  margin-bottom:15px;
+  text-shadow:0 4px 20px rgba(0,0,0,.4);
+}
+
+.hero-content p{
+  font-size:1.2em;
+  line-height:1.9;
+  text-shadow:0 3px 15px rgba(0,0,0,.5);
+}
+
+
+/* =========================
+   أزرار الأعلى
+========================= */
+
+.circle-btn{
+  position:fixed;
+  top:20px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:rgba(255,255,255,.95);
+  color:#c72d67;
+  border:1px solid #f3bfd1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  cursor:pointer;
+  z-index:100;
+  transition:.3s;
+  box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+
+.circle-btn:hover{
+  transform:scale(1.08);
+}
+
+.mode-btn{
+  left:20px;
+}
+
+.home-btn{
+  right:20px;
+}
+
+
+/* =========================
+   قائمة الصفحات
+========================= */
+
+.pages-menu{
+  position:fixed;
+  top:75px;
+  right:20px;
+  background:#fff;
+  padding:20px;
+  border-radius:18px;
+  display:none;
+  flex-direction:column;
+  gap:12px;
+  z-index:110;
+  box-shadow:0 15px 40px rgba(100,20,50,.18);
+  border:1px solid #f3c6d7;
+}
+
+.pages-menu.active{
+  display:flex;
+}
+
+.pages-menu a{
+  color:#7b2948;
+  text-decoration:none;
+  background:#fff0f5;
+  padding:10px 15px;
+  border-radius:50px;
+  min-width:175px;
+  text-align:center;
+  transition:.3s;
+}
+
+.pages-menu a:hover{
+  background:#f8d1df;
+  transform:translateX(-3px);
+}
+
+
+/* =========================
+   الوضع الليلي
+========================= */
+
+body.night{
+  background:#170b11;
+  color:#fff;
+}
+
+body.night .card{
+  background:rgba(35,14,24,.88);
+  border-color:#54293a;
+}
+
+body.night .card p{
+  color:#eadce1;
+}
+
+body.night .desc{
+  color:#e8d7de;
+  border-color:#633044;
+}
+
+body.night .main-title{
+  color:#ff9fbd;
+}
+
+body.night footer{
+  background:#11070c;
+  border-color:#44202e;
+}
+
+body.night .pages-menu{
+  background:#241019;
+  border-color:#54293a;
+}
+
+body.night .pages-menu a{
+  background:#351722;
+  color:#fff;
+}
+
+body.night .circle-btn{
+  background:#241019;
+  border-color:#54293a;
+}
+
+
+/* =========================
+   المحتوى
+========================= */
+
+.section{
+  padding:100vh 20px 60px;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,255,255,.95),
+    #fff
+  );
+}
+
+body.night .section{
+  background:linear-gradient(
+    to bottom,
+    rgba(23,11,17,.95),
+    #170b11
+  );
+}
+
+
+/* =========================
+   العنوان
+========================= */
+
+.main-title{
+  text-align:center;
+  font-size:40px;
+  font-weight:800;
+  margin-bottom:60px;
+  color:#c72d67;
+}
+
+
+/* =========================
+   البطاقات
+========================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.card{
+  background:rgba(255,255,255,.9);
+  border:1px solid #f1c5d5;
+  border-radius:22px;
+  padding:30px 20px;
+  backdrop-filter:blur(8px);
+  text-align:center;
+  transition:.35s;
+  box-shadow:0 12px 35px rgba(199,45,103,.08);
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 18px 40px rgba(199,45,103,.14);
+}
+
+.card h2{
+  font-size:2.8em;
+  margin:0 0 15px;
+}
+
+.card p{
+  white-space:pre-line;
+  line-height:1.8;
+  color:#704354;
+  margin:0;
+}
+
+
+/* =========================
+   زر المزيد
+========================= */
+
+.branch-btn{
+  margin-top:20px;
+  padding:9px 20px;
+  border-radius:50px;
+  border:1px solid #e7a9c0;
+  cursor:pointer;
+  background:#fff0f5;
+  color:#b52c60;
+  font-family:'Tajawal',sans-serif;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.branch-btn:hover{
+  background:#c72d67;
+  color:#fff;
+}
+
+
+/* =========================
+   وصف الإنجاز
+========================= */
+
+.desc{
+  display:none;
+  margin-top:18px;
+  padding:15px;
+  background:#fff5f8;
+  border-radius:15px;
+  line-height:1.9;
+  color:#704354;
+  border:1px solid #f2c8d7;
+  animation:showDesc .35s ease;
+}
+
+@keyframes showDesc{
+  from{
+    opacity:0;
+    transform:translateY(-8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+/* =========================
+   الفوتر
+========================= */
+
+footer{
+  background:#fff8fa;
+  border-top:1px solid #f2c7d7;
+  padding:25px 20px;
+  text-align:center;
+  color:#956174;
+}
+
+footer div{
+  margin-top:8px;
+  font-size:13px;
+  color:#b17b8d;
+}
+
+
+/* =========================
+   الجوال
+========================= */
+
+@media(max-width:700px){
+
+  .hero-content h1{
+    font-size:2.1em;
+  }
+
+  .hero-content p{
+    font-size:1em;
+  }
+
+  .main-title{
+    font-size:30px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- زر الوضع الليلي -->
+
+<div class="circle-btn mode-btn" onclick="toggleNight()" id="modeBtn">
+  <i class="fa-solid fa-moon"></i>
+</div>
+
+
+<!-- زر الصفحات -->
+
+<div class="circle-btn home-btn" onclick="togglePages()">♡</div>
+
+
+<!-- قائمة الصفحات -->
+
+<div class="pages-menu" id="pages">
+
+  <a href="index.html">الرئيسية</a>
+
+  <a href="elite.html">ذِكْرَيَاتَ</a>
+
+  <a href="branches.html">أَحْلَامُنَاَ</a>
+
+  <a href="rules.html">وَعْدِي لَكَ</a>
+
+  <a href="achievements.html">الانجازاتَ</a>
+
+  <a href="docs.html">هَدِيَّتِي لَكَ</a>
+
+  <a href="promotions.html">رِسَالَة خَاصَّة لَكَ</a>
+
+</div>
+
+
+<!-- =========================
+     المقدمة
+========================= -->
+
+<section class="hero">
+
+  <!-- نفس الفيديو بدون تغيير -->
+
+  <video autoplay muted loop playsinline>
+
+    <source src="Am1.mp4" type="video/mp4">
+
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <h1>إِنْجَازَاتُنَا 🫀</h1>
+
+    <p>
+
+      لَيْسَتْ كُلُّ الإِنْجَازَاتِ أَرْقَامًا تُكْتَبُ،
+      فَبَعْضُهَا لَحَظَاتٌ عِشْنَاهَا مَعًا،
+      وَبَعْضُهَا أَيَّامٌ تَجَاوَزْنَاهَا يَدًا بِيَد.
+
+      <br>
+
+      هُنَا سِجِلُّ أَجْمَلِ مَا حَقَّقْنَاهُ مَعًا. ♡
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     الإنجازات
+========================= -->
+
+<section class="section">
+
+<div class="main-title">
+  إِنْجَازَاتُنَا مَعًا 🏆🫀
+</div>
+
+
+<div class="cards">
+
+
+<!-- الإنجاز العام -->
+
+<div class="card">
+
+  <h2>💌</h2>
+
+  <p>
+
+    أَجْمَلُ إِنْجَازٍ لَمْ يَكُنْ شَيْئًا نَمْلِكُهُ،
+    بَلْ كَانَ أَنَّنَا وَجَدْنَا بَعْضَنَا.
+
+    مَرَّتْ أَيَّامٌ كَثِيرَة،
+    وَبَقِيَتْ حِكَايَتُنَا تَكْبُرُ مَعَ كُلِّ يَوْم.
+
+    وَمَا زَالَ أَجْمَلُ فَصْلٍ فِي قِصَّتِنَا لَمْ يُكْتَبْ بَعْد. ♡
+
+  </p>
+
+</div>
+
+
+<!-- الإنجاز الأول -->
+
+<div class="card">
+
+  <h2>🫀</h2>
+
+  <p>
+    أَوَّلُ لَحْظَةٍ جَمَعَتْنَا
+  </p>
+
+  <button class="branch-btn" onclick="toggleDesc(this)">
+    المزيد
+  </button>
+
+  <div class="desc">
+
+    كَانَتْ أَوَّلُ خُطْوَةٍ فِي حِكَايَتِنَا،
+    وَرُبَّمَا لَمْ نَكُنْ نَعْرِفُ حِينَها
+    أَنَّ لَحْظَةً صَغِيرَةً سَتَصْنَعُ كُلَّ هَذِهِ الذِّكْرَيَاتِ.
+
+    وَمِنْ تِلْكَ اللَّحْظَةِ بَدَأَتْ قِصَّتُنَا.
+
+  </div>
+
+</div>
+
+
+<!-- الإنجاز الثاني -->
+
+<div class="card">
+
+  <h2>💗</h2>
+
+  <p>
+    أَنْ نَجْعَلَ الحُبَّ جُزْءًا مِنْ أَيَّامِنَا
+  </p>
+
+  <button class="branch-btn" onclick="toggleDesc(this)">
+    المزيد
+  </button>
+
+  <div class="desc">
+
+    أَصْبَحَ لِكُلِّ يَوْمٍ شَيْءٌ يَذْكِّرُنَا بِبَعْضِنَا،
+    وَصَارَتِ التَّفَاصِيلُ الصَّغِيرَةُ تَحْمِلُ مَعَانِيَ كَبِيرَة.
+
+    إِنْجَازُنَا لَيْسَ أَنْ نَقُولَ إِنَّنَا نُحِبُّ،
+    بَلْ أَنْ نَجْعَلَ هَذَا الحُبَّ يَظْهَرُ فِي تَفَاصِيلِنَا.
+
+  </div>
+
+</div>
+
+
+<!-- الإنجاز الثالث -->
+
+<div class="card">
+
+  <h2>🤝</h2>
+
+  <p>
+    تَجَاوُزُ الأَيَّامِ الصَّعْبَةِ مَعًا
+  </p>
+
+  <button class="branch-btn" onclick="toggleDesc(this)">
+    المزيد
+  </button>
+
+  <div class="desc">
+
+    لَمْ تَكُنْ كُلُّ الأَيَّامِ سَهْلَة،
+    وَلَكِنَّنَا تَعَلَّمْنَا أَنَّ الحِكَايَةَ الحَقِيقِيَّةَ
+    لَا تُقَاسُ بِعَدَدِ الأَيَّامِ الجَمِيلَةِ فَقَطْ،
+    بَلْ بِكَيْفِيَّةِ تَجَاوُزِنَا لِلأَيَّامِ الصَّعْبَةِ.
+
+  </div>
+
+</div>
+
+
+<!-- الإنجاز الرابع -->
+
+<div class="card">
+
+  <h2>🌷</h2>
+
+  <p>
+    صُنْعُ ذِكْرَيَاتٍ لَا تُنْسَى
+  </p>
+
+  <button class="branch-btn" onclick="toggleDesc(this)">
+    المزيد
+  </button>
+
+  <div class="desc">
+
+    مِنْ كَلِمَةٍ صَغِيرَةٍ،
+    إِلَى ضَحْكَةٍ طَوِيلَة،
+    إِلَى لَحْظَةٍ لَمْ نُرِدْ لَهَا أَنْ تَنْتَهِي.
+
+    جَمَعْنَا تَفَاصِيلَ صَغِيرَةً،
+    وَلَكِنَّهَا أَصْبَحَتْ جُزْءًا كَبِيرًا مِنْ حِكَايَتِنَا.
+
+  </div>
+
+</div>
+
+
+<!-- الإنجاز الخامس -->
+
+<div class="card">
+
+  <h2>🌙</h2>
+
+  <p>
+    أَنْ نَبْقَى قَرِيبَيْنِ رَغْمَ المَسَافَات
+  </p>
+
+  <button class="branch-btn" onclick="toggleDesc(this)">
+    المزيد
+  </button>
+
+  <div class="desc">
+
+    المَسَافَةُ قَدْ تَفْصِلُ بَيْنَ الأَمَاكِنِ،
+    لَكِنَّهَا لَا تَسْتَطِيعُ أَنْ تَفْصِلَ قَلْبَيْنِ
+    يَحْرِصَانِ عَلَى البَقَاءِ قَرِيبَيْنِ.
+
+    وَكُلُّ يَوْمٍ نَبْقَى فِيهِ مَعًا هُوَ إِنْجَازٌ جَدِيد.
+
+  </div>
+
+</div>
+
+
+<!-- الإنجاز السادس -->
+
+<div class="card">
+
+  <h2>🫶</h2>
+
+  <p>
+    أَنْ نَفْهَمَ بَعْضَنَا أَكْثَر
+  </p>
+
+  <button class="branch-btn" onclick="toggleDesc(this)">
+    المزيد
+  </button>
+
+  <div class="desc">
+
+    مَعَ الوَقْتِ لَمْ نَعْرِفْ بَعْضَنَا فَقَطْ،
+    بَلْ بَدَأْنَا نَفْهَمُ صَمْتَ بَعْضِنَا،
+    وَنَعْرِفُ مَتَى نَحْتَاجُ إِلَى كَلِمَة،
+    وَمَتَى نَحْتَاجُ فَقَطْ إِلَى أَنْ يَبْقَى الآخَرُ قَرِيبًا.
+
+  </div>
+
+</div>
+
+
+<!-- الإنجاز السابع -->
+
+<div class="card">
+
+  <h2>💍</h2>
+
+  <p>
+    أَنْ نَبْدَأَ نَحْلُمُ بِالمُسْتَقْبَلِ مَعًا
+  </p>
+
+  <button class="branch-btn" onclick="toggleDesc(this)">
+    المزيد
+  </button>
+
+  <div class="desc">
+
+    مِنْ أَجْمَلِ الإِنْجَازَاتِ أَنَّنَا لَمْ نَعُدْ نَنْظُرُ
+    إِلَى الغَدِ كَشَيْءٍ مَجْهُولٍ فَقَطْ،
+    بَلْ بَدَأْنَا نَتَخَيَّلُ أَحْلَامًا نُرِيدُ أَنْ نَعِيشَهَا مَعًا.
+
+  </div>
+
+</div>
+
+
+<!-- الخاتمة -->
+
+<div class="card">
+
+  <h2>❤️</h2>
+
+  <p>
+    وَالأَجْمَلُ أَنَّ الحِكَايَةَ لَمْ تَنْتَهِ بَعْد
+  </p>
+
+  <button class="branch-btn" onclick="toggleDesc(this)">
+    المزيد
+  </button>
+
+  <div class="desc">
+
+    كُلُّ مَا سَبَقَ كَانَ مُجَرَّدَ فَصْلٍ مِنْ فُصُولِ حِكَايَتِنَا.
+
+    وَمَا زَالَ هُنَاكَ أَيَّامٌ جَدِيدَة،
+    وَذِكْرَيَاتٌ أَجْمَل،
+    وَأَحْلَامٌ أَكْبَر،
+    وَإِنْجَازَاتٌ سَنَكْتُبُهَا مَعًا.
+
+    فَأَجْمَلُ إِنْجَازٍ قَادِمٍ...
+    أَنْ نَبْقَى مَعًا. 🫀
+
+  </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     الفوتر
+========================= -->
+
+<footer>
+
+  © حِكَايَتُنَا 🫀 - كُلُّ الحُقُوقِ مَحْفُوظَة
+
+  <div>
+    صُمِّمَتْ بِالحُب 𝑀..𖤐
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   قائمة الصفحات
+========================= */
+
+function togglePages(){
+
+  document
+    .getElementById("pages")
+    .classList.toggle("active");
+
+}
+
+
+/* =========================
+   الوضع الليلي
+========================= */
+
+function toggleNight(){
+
+  document.body.classList.toggle("night");
+
+  const icon =
+    document
+      .getElementById("modeBtn")
+      .querySelector("i");
+
+  if(document.body.classList.contains("night")){
+
+    icon.className = "fa-solid fa-sun";
+
+  }else{
+
+    icon.className = "fa-solid fa-moon";
+
+  }
+
+}
+
+
+/* =========================
+   فتح وإغلاق الإنجاز
+========================= */
+
+function toggleDesc(btn){
+
+  const d = btn.nextElementSibling;
+
+  if(d.style.display === "block"){
+
+    d.style.display = "none";
+
+    btn.textContent = "المزيد";
+
+  }else{
+
+    d.style.display = "block";
+
+    btn.textContent = "إخفاء";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
