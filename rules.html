@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>وَعْدِي لَكِ ↫🫀 | ♡</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:#fff;
+  color:#35151f;
+  overflow-x:hidden;
+  position:relative;
+  transition:.4s ease;
+}
+
+/* =========================
+   الوضع الليلي
+========================= */
+
+body.night{
+  background:#170b11;
+  color:#fff;
+}
+
+body.night .header{
+  background:#241019;
+  border-color:#42202d;
+}
+
+body.night .intro{
+  background:#241019;
+  border-color:#4b2635;
+}
+
+body.night .promise-card{
+  background:#241019;
+  border-color:#4b2635;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+body.night .promise-card p{
+  color:#e8d9de;
+}
+
+body.night footer{
+  background:#11070c;
+  border-color:#42202d;
+}
+
+body.night .pages-menu{
+  background:#241019;
+}
+
+body.night .pages-menu a{
+  background:#351722;
+  color:#fff;
+}
+
+body.night .gift{
+  background:linear-gradient(145deg,#542039,#7c3154);
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+body.night .message{
+  background:#321520;
+  border-color:#633044;
+}
+
+body.night .message p{
+  color:#f0dfe5;
+}
+
+
+/* =========================
+   العنوان
+========================= */
+
+.header{
+  background:#fff;
+  padding:75px 20px 30px;
+  text-align:center;
+  font-size:2em;
+  font-weight:bold;
+  color:#c72d67;
+  border-bottom:1px solid #f5c9d9;
+  transition:.4s;
+}
+
+.header span{
+  display:block;
+  font-size:.45em;
+  margin-top:8px;
+  color:#9b6376;
+}
+
+
+/* =========================
+   زر الوضع الليلي
+========================= */
+
+.circle-btn{
+  position:fixed;
+  top:20px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#fff;
+  color:#c72d67;
+  border:1px solid #f1bfd1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:19px;
+  cursor:pointer;
+  z-index:100;
+  transition:.3s;
+  box-shadow:0 5px 20px rgba(199,45,103,.12);
+}
+
+.circle-btn:hover{
+  transform:scale(1.08);
+}
+
+.mode-btn{
+  left:20px;
+}
+
+.home-btn{
+  right:20px;
+}
+
+
+/* =========================
+   قائمة الصفحات
+========================= */
+
+.pages-menu{
+  position:fixed;
+  top:75px;
+  right:20px;
+  background:#fff;
+  padding:18px;
+  border-radius:18px;
+  display:none;
+  flex-direction:column;
+  gap:12px;
+  z-index:90;
+  box-shadow:0 15px 40px rgba(120,30,60,.15);
+  border:1px solid #f3c6d7;
+}
+
+.pages-menu.active{
+  display:flex;
+}
+
+.pages-menu a{
+  color:#7b2948;
+  text-decoration:none;
+  background:#fff0f5;
+  padding:11px 18px;
+  border-radius:50px;
+  text-align:center;
+  min-width:170px;
+  transition:.3s;
+}
+
+.pages-menu a:hover{
+  background:#f8d1df;
+  transform:translateX(-3px);
+}
+
+
+/* =========================
+   المقدمة
+========================= */
+
+.section{
+  padding:35px 20px 60px;
+  max-width:900px;
+  margin:auto;
+}
+
+.intro{
+  text-align:center;
+  background:#fff7fa;
+  border:1px solid #f5cada;
+  border-radius:22px;
+  padding:25px 20px;
+  margin-bottom:40px;
+  box-shadow:0 8px 25px rgba(199,45,103,.06);
+}
+
+.intro h2{
+  color:#c72d67;
+  margin:0 0 10px;
+}
+
+.intro p{
+  margin:0;
+  line-height:1.9;
+  color:#825465;
+}
+
+
+/* =========================
+   بطاقات الوعود
+========================= */
+
+.promises{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.promise-card{
+  background:#fff;
+  border:1px solid #f2c7d7;
+  border-radius:25px;
+  padding:25px 20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(199,45,103,.08);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.promise-card:hover{
+  transform:translateY(-7px);
+}
+
+.promise-number{
+  color:#c72d67;
+  font-size:.85em;
+  margin-bottom:15px;
+  font-weight:bold;
+}
+
+
+/* =========================
+   الهدية
+========================= */
+
+.gift{
+  width:125px;
+  height:125px;
+  margin:10px auto 20px;
+  border-radius:30px;
+  background:linear-gradient(145deg,#ff7fa8,#d93670);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 15px 35px rgba(217,54,112,.25);
+  transition:.35s;
+  position:relative;
+}
+
+.gift:hover{
+  transform:scale(1.07) rotate(-2deg);
+}
+
+.gift i{
+  color:#fff;
+  font-size:55px;
+  filter:drop-shadow(0 5px 5px rgba(0,0,0,.15));
+}
+
+.gift-text{
+  color:#a63459;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.promise-card h3{
+  color:#c72d67;
+  margin:10px 0;
+}
+
+
+/* =========================
+   الرسالة المخفية
+========================= */
+
+.message{
+  display:none;
+  margin-top:20px;
+  padding:20px;
+  background:#fff4f8;
+  border:1px solid #f1c3d4;
+  border-radius:18px;
+  animation:openMessage .5s ease;
+}
+
+.message.active{
+  display:block;
+}
+
+.message-title{
+  color:#c72d67;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.message p{
+  margin:0;
+  line-height:2;
+  color:#704354;
+  font-size:.95em;
+}
+
+.close-message{
+  margin-top:15px;
+  border:0;
+  background:#c72d67;
+  color:white;
+  padding:8px 18px;
+  border-radius:50px;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+@keyframes openMessage{
+  from{
+    opacity:0;
+    transform:translateY(15px) scale(.97);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+
+/* =========================
+   الفوتر
+========================= */
+
+footer{
+  background:#fff8fa;
+  border-top:1px solid #f2c7d7;
+  padding:25px 10px;
+  text-align:center;
+  transition:.4s;
+}
+
+.footer-content{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.footer-logo{
+  width:40px;
+  border-radius:50%;
+}
+
+footer span{
+  font-size:14px;
+  color:#956174;
+}
+
+footer div:last-child{
+  margin-top:8px;
+  font-size:13px;
+  color:#b17b8d;
+}
+
+
+/* =========================
+   القلوب المتساقطة
+========================= */
+
+.heart{
+  position:fixed;
+  top:-20px;
+  color:#ef7198;
+  z-index:1;
+  user-select:none;
+  pointer-events:none;
+  animation:fall 9s linear infinite;
+  opacity:.65;
+}
+
+body.night .heart{
+  color:#b85a7c;
+}
+
+@keyframes fall{
+  0%{
+    transform:translateY(0) translateX(0) rotate(0deg);
+  }
+
+  50%{
+    transform:translateY(50vh) translateX(35px) rotate(180deg);
+  }
+
+  100%{
+    transform:translateY(110vh) translateX(-20px) rotate(360deg);
+  }
+}
+
+
+/* =========================
+   الجوال
+========================= */
+
+@media(max-width:800px){
+
+  .promises{
+    grid-template-columns:1fr;
+    max-width:430px;
+    margin:auto;
+  }
+
+  .header{
+    font-size:1.6em;
+    padding-top:80px;
+  }
+
+  .gift{
+    width:115px;
+    height:115px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- زر الوضع الليلي -->
+<div class="circle-btn mode-btn" onclick="toggleNight()" id="modeBtn">
+  <i class="fa-solid fa-moon"></i>
+</div>
+
+
+<!-- زر الصفحات -->
+<div class="circle-btn home-btn" onclick="togglePages()">♡</div>
+
+
+<!-- قائمة الصفحات -->
+<div class="pages-menu" id="pages">
+
+  <a href="index.html">الرئيسية</a>
+
+  <a href="elite.html">ذِكْرَيَاتَ</a>
+
+  <a href="branches.html">أَحْلَامُنَاَ</a>
+
+  <a href="rules.html">وَعْدِي لَكَ</a>
+
+  <a href="achievements.html">الانجازاتَ</a>
+
+  <a href="docs.html">هَدِيَّتِي لَكَ</a>
+
+  <a href="promotions.html">رِسَالَة خَاصَّة لَكَ</a>
+
+</div>
+
+
+<!-- العنوان -->
+
+<div class="header">
+
+  وَعْــدِي لَــكِ ↫🫀 | ♡
+
+  <span>
+   ثَلاثَةُ وُعُودٍ أُرِيدُ أَنْ تَحْفَظَهَا جَيِّداً
+  </span>
+
+</div>
+
+
+<section class="section">
+
+
+<!-- المقدمة -->
+
+<div class="intro">
+
+  <h2>إِلَــيْــكَ وَعْــدِي 🫀</h2>
+
+  <p>
+    لَيْسَ كُلُّ وَعْدٍ يُقَالُ يُنْسَى،
+    فَبَعْضُ الوُعُودِ تُكْتَبُ لِتَبْقَى...
+    وَهُنَا ثَلَاثَةُ وُعُودٍ أَخْبَأْتُهَا لَكِ.
+  </p>
+
+</div>
+
+
+<!-- الوعود -->
+
+<div class="promises">
+
+
+<!-- الوعد الأول -->
+
+<div class="promise-card">
+
+  <div class="promise-number">
+    الوَعْدُ الأَوَّل
+  </div>
+
+  <div class="gift" onclick="openMessage('message1')">
+    <i class="fa-solid fa-gift"></i>
+  </div>
+
+  <div class="gift-text">
+     اضغط للفتح
+  </div>
+
+  <h3>وَعْدُ البَقَاءِ 🫀</h3>
+
+  <div class="message" id="message1">
+
+    <div class="message-title">
+      💌 رِسَالَةٌ لَكِ
+    </div>
+
+    <p>
+      أَعِدُكِ أَنْ لَا أَكُونَ مَعَكِ فَقَطْ فِي الأَيَّامِ الجَمِيلَة،
+      بَلْ حَتَّى فِي الأَيَّامِ الَّتِي تَكُونُ فِيهَا الدُّنْيَا ثَقِيلَةً عَلَيْكِ.
+      سَأَبْقَى مَا اسْتَطَعْتُ، وَسَأَحَاوِلُ دَائِمًا أَنْ أَكُونَ مَكَانًا تَشْعُرِ فِيهِ بِالأَمَان.
+    </p>
+
+    <button class="close-message" onclick="closeMessage('message1')">
+      إغلاق الرسالة
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- الوعد الثاني -->
+
+<div class="promise-card">
+
+  <div class="promise-number">
+    الوَعْدُ الثَّانِي
+  </div>
+
+  <div class="gift" onclick="openMessage('message2')">
+    <i class="fa-solid fa-gift"></i>
+  </div>
+
+  <div class="gift-text">
+     اضغط للفتح
+  </div>
+
+  <h3>وَعْدُ الاهْتِمَام 💗</h3>
+
+  <div class="message" id="message2">
+
+    <div class="message-title">
+      💌 رِسَالَةٌ لَكِ
+    </div>
+
+    <p>
+      أَعِدُكِ أَنْ لَا أَجْعَلَ اعْتِيَادِي عَلَيْكِ سَبَبًا لِأَنْ أُهْمِلَكِ.
+      سَأَسْأَلُ عَنْكَ، وَأَسْمَعُكَ، وَأَهْتَمُّ بِتَفَاصِيلِكِ الصَّغِيرَةِ قَبْلَ الكَبِيرَة.
+      لأَنَّ مَا يَخُصُّكِ سَيَبْقَى يَعْنِينِي.
+    </p>
+
+    <button class="close-message" onclick="closeMessage('message2')">
+      إغلاق الرسالة
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- الوعد الثالث -->
+
+<div class="promise-card">
+
+  <div class="promise-number">
+    الوَعْدُ الثَّالِث
+  </div>
+
+  <div class="gift" onclick="openMessage('message3')">
+    <i class="fa-solid fa-gift"></i>
+  </div>
+
+  <div class="gift-text">
+     اضغط للفتح
+  </div>
+
+  <h3>وَعْدُ المُسْتَقْبَل 💍</h3>
+
+  <div class="message" id="message3">
+
+    <div class="message-title">
+      💌 رِسَالَةٌ لَكِ
+    </div>
+
+    <p>
+      أَعِدُكِ أَنْ أَجْعَلَ لِحُضُورِكِ مَكَانًا فِي خُطَطِي،
+      وَأَلَّا أَتَخَيَّلَ المُسْتَقْبَلَ دُونَ أَنْ أَتَذَكَّرَ أَنَّ أَجْمَلَ مَا فِيهِ
+      هُوَ أَنْ نَصِلَ إِلَيْهِ مَعًا.
+      وَإِنْ كَبُرَتْ أَحْلَامُنَا، فَسَنَكْبُرُ مَعَهَا.
+    </p>
+
+    <button class="close-message" onclick="closeMessage('message3')">
+      إغلاق الرسالة
+    </button>
+
+  </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- الفوتر -->
+
+<footer>
+
+  <div class="footer-content">
+
+    <img src="افتار.png" class="footer-logo">
+
+    <span>
+      © 🫀 - كُلُّ الحُقُوقِ مَحْفُوظَة
+    </span>
+
+  </div>
+
+  <div>
+    صُمِّمَتْ بِالحُب 𝑀..𖤐
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   قائمة الصفحات
+========================= */
+
+function togglePages(){
+
+  document.getElementById("pages")
+  .classList.toggle("active");
+
+}
+
+
+/* =========================
+   الوضع الليلي
+========================= */
+
+function toggleNight(){
+
+  document.body.classList.toggle("night");
+
+  const btn = document.getElementById("modeBtn");
+
+  const icon = btn.querySelector("i");
+
+  if(document.body.classList.contains("night")){
+
+    icon.className = "fa-solid fa-sun";
+
+  }else{
+
+    icon.className = "fa-solid fa-moon";
+
+  }
+
+}
+
+
+/* =========================
+   فتح الهدية
+========================= */
+
+function openMessage(id){
+
+  document.querySelectorAll(".message")
+  .forEach(message => {
+
+    if(message.id !== id){
+
+      message.classList.remove("active");
+
+    }
+
+  });
+
+  document.getElementById(id)
+  .classList.add("active");
+
+}
+
+
+/* =========================
+   إغلاق الرسالة
+========================= */
+
+function closeMessage(id){
+
+  document.getElementById(id)
+  .classList.remove("active");
+
+}
+
+
+/* =========================
+   قلوب متساقطة
+========================= */
+
+const heartCount = 25;
+
+for(let i = 0; i < heartCount; i++){
+
+  let heart = document.createElement("div");
+
+  heart.className = "heart";
+
+  heart.style.left = Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (Math.random() * 14 + 10) + "px";
+
+  heart.style.animationDuration =
+    (Math.random() * 5 + 6) + "s";
+
+  heart.style.animationDelay =
+    (Math.random() * 8) + "s";
+
+  heart.textContent = "♡";
+
+  document.body.appendChild(heart);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>رِسَالَتِي الخَاصَّة لَكِ ↫🫀 | ♡</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:#fff;
+  color:#4a1728;
+  overflow-x:hidden;
+  transition:.5s;
+}
+
+/* ===== الوضع الليلي ===== */
+
+body.night{
+  background:#160912;
+  color:#f9dce7;
+}
+
+body.night .section{
+  background:#160912;
+}
+
+body.night .card{
+  background:rgba(35,10,22,.78);
+  border-color:rgba(255,150,180,.15);
+}
+
+body.night .card h3,
+body.night .card p{
+  color:#f9dce7;
+}
+
+body.night footer{
+  background:#0d0509;
+  border-color:#30121f;
+}
+
+body.night .pages-menu{
+  background:#210c16;
+}
+
+body.night .pages-menu a{
+  background:#351321;
+  color:#ffdce8;
+}
+
+/* ===== الأزرار ===== */
+
+.circle-btn{
+  position:fixed;
+  top:20px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:rgba(255,255,255,.85);
+  color:#7d2140;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  cursor:pointer;
+  z-index:30;
+  transition:.3s;
+  box-shadow:0 5px 20px rgba(120,20,60,.12);
+  backdrop-filter:blur(10px);
+}
+
+.circle-btn:hover{
+  transform:scale(1.08);
+  background:#f7b6ca;
+}
+
+.home-btn{
+  right:20px;
+}
+
+.mode-btn{
+  left:20px;
+}
+
+.pages-menu{
+  position:fixed;
+  top:75px;
+  right:20px;
+  background:#fff;
+  padding:18px;
+  border-radius:18px;
+  display:none;
+  flex-direction:column;
+  gap:10px;
+  z-index:40;
+  box-shadow:0 15px 40px rgba(100,20,50,.18);
+  border:1px solid rgba(180,50,90,.12);
+}
+
+.pages-menu.active{
+  display:flex;
+}
+
+.pages-menu a{
+  color:#6d1836;
+  text-decoration:none;
+  background:#fff0f5;
+  padding:11px 18px;
+  border-radius:50px;
+  transition:.3s;
+  text-align:center;
+  min-width:180px;
+}
+
+.pages-menu a:hover{
+  background:#f6b4c9;
+  transform:translateX(-4px);
+}
+
+/* ===== الهيرو ===== */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:blur(3px) brightness(.62);
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-2;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,220,230,.12),
+    rgba(255,245,248,.45),
+    rgba(255,255,255,.96)
+  );
+  z-index:-1;
+}
+
+body.night .hero::after{
+  background:linear-gradient(
+    to bottom,
+    rgba(30,5,15,.2),
+    rgba(25,5,14,.55),
+    rgba(22,9,18,1)
+  );
+}
+
+.hero-content{
+  text-align:center;
+  padding:25px;
+  max-width:850px;
+  animation:fadeUp 1.5s ease;
+}
+
+.hero-content h1{
+  color:#7d2140;
+  font-size:clamp(2.1rem,6vw,4.5rem);
+  margin:0 0 15px;
+  text-shadow:0 4px 20px rgba(120,20,60,.15);
+}
+
+.hero-content p{
+  color:#70223c;
+  font-size:1.15rem;
+  line-height:2;
+}
+
+body.night .hero-content h1,
+body.night .hero-content p{
+  color:#ffd9e5;
+}
+
+.scroll-heart{
+  margin-top:30px;
+  font-size:30px;
+  animation:pulse 1.7s infinite;
+}
+
+/* ===== القسم ===== */
+
+.section{
+  position:relative;
+  padding:70px 20px;
+  background:#fff;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  color:#7d2140;
+  font-size:2rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#9a536c;
+}
+
+/* ===== البطاقات ===== */
+
+.cards{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:25px;
+}
+
+.card{
+  position:relative;
+  background:rgba(255,245,248,.9);
+  border:1px solid rgba(190,60,100,.12);
+  border-radius:22px;
+  overflow:hidden;
+  padding:28px;
+  box-shadow:0 10px 35px rgba(120,20,60,.08);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 18px 45px rgba(150,30,70,.14);
+}
+
+.card::before{
+  content:"♡";
+  position:absolute;
+  left:18px;
+  top:10px;
+  font-size:42px;
+  color:rgba(190,60,100,.08);
+}
+
+.card h3{
+  color:#7d2140;
+  font-size:1.35rem;
+  margin-top:0;
+}
+
+.card p{
+  color:#673346;
+  line-height:2;
+  font-size:1.05rem;
+  white-space:pre-line;
+}
+
+/* ===== الرسالة الرئيسية ===== */
+
+.special-message{
+  max-width:850px;
+  margin:70px auto 20px;
+  padding:45px 30px;
+  text-align:center;
+  border-radius:30px;
+  background:linear-gradient(145deg,#fff3f7,#fff);
+  border:1px solid rgba(190,60,100,.13);
+  box-shadow:0 15px 50px rgba(120,20,60,.09);
+}
+
+.special-message h2{
+  color:#7d2140;
+  font-size:2rem;
+}
+
+.special-message p{
+  color:#673346;
+  line-height:2.2;
+  font-size:1.08rem;
+}
+
+/* ===== الخاتمة ===== */
+
+.ending{
+  position:relative;
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at center,rgba(245,150,180,.18),transparent 55%),
+    #fff;
+}
+
+body.night .ending{
+  background:
+    radial-gradient(circle at center,rgba(150,35,80,.25),transparent 55%),
+    #160912;
+}
+
+.ending-box{
+  max-width:850px;
+  position:relative;
+  z-index:2;
+}
+
+.ending-heart{
+  font-size:65px;
+  margin-bottom:20px;
+  animation:pulse 2s infinite;
+}
+
+.ending h2{
+  font-size:clamp(2rem,5vw,3.5rem);
+  color:#7d2140;
+  margin:10px 0 25px;
+}
+
+body.night .ending h2{
+  color:#ffd8e4;
+}
+
+.ending p{
+  color:#673346;
+  font-size:1.15rem;
+  line-height:2.3;
+  margin:12px auto;
+}
+
+body.night .ending p{
+  color:#f2cbd8;
+}
+
+.final-line{
+  margin-top:45px !important;
+  font-size:1.35rem !important;
+  font-weight:bold;
+  color:#8d2348 !important;
+}
+
+.signature{
+  margin-top:35px;
+  font-size:1.05rem;
+  color:#a15a73;
+}
+
+/* ===== القلوب المتساقطة ===== */
+
+.heart{
+  position:fixed;
+  top:-30px;
+  color:#d95b82;
+  font-size:18px;
+  pointer-events:none;
+  z-index:1;
+  animation:fall linear forwards;
+}
+
+body.night .heart{
+  color:#ef8eaa;
+}
+
+/* ===== الفوتر ===== */
+
+footer{
+  background:#fff;
+  border-top:1px solid #f1dce3;
+  padding:25px 10px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.footer-content{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.footer-logo{
+  width:40px;
+  height:40px;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+footer span{
+  font-size:14px;
+  color:#9a6375;
+}
+
+footer div:last-child{
+  margin-top:8px;
+  font-size:13px;
+  color:#b07b8d;
+}
+
+/* ===== الحركات ===== */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(35px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes pulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.15);
+  }
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:600px){
+  .hero-content p{
+    font-size:1rem;
+  }
+
+  .card{
+    padding:23px;
+  }
+
+  .ending{
+    min-height:90vh;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- زر الصفحات -->
+<div class="circle-btn home-btn" onclick="togglePages()">♡</div>
+
+<!-- زر الوضع الليلي -->
+<div class="circle-btn mode-btn" onclick="toggleNight()" id="modeBtn">☾</div>
+
+<!-- قائمة الصفحات -->
+<div class="pages-menu" id="pages">
+  <a href="index.html">الرئيسية</a>
+  <a href="elite.html">ذِكرياتَ</a>
+  <a href="branches.html">أَحلامناَ</a>
+  <a href="rules.html">وَعدي لكَ</a>
+  <a href="achievements.html">الانجازاتَ</a>
+  <a href="docs.html">هديتي لك</a>
+  <a href="promotions.html">رساله خاصه لك</a>
+</div>
+
+<!-- الهيرو -->
+<section class="hero">
+
+  <video autoplay muted loop playsinline>
+    <source src="T1.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
+
+    <div class="scroll-heart">🫀</div>
+
+    <h1>رِسَالَتِي الخَاصَّة لَكِ</h1>
+
+    <p>
+      لَسْتُ أَعْرِفُ كَيْفَ أَقُولُ كُلَّ مَا فِي قَلْبِي...
+      <br>
+      لِذَلِكَ قَرَّرْتُ أَنْ أَكْتُبَهُ لَكِ هُنَا.
+    </p>
+
+    <div class="scroll-heart">♡</div>
+
+  </div>
+</section>
+
+<!-- الرسالة -->
+<section class="section">
+
+  <div class="section-title">
+    <h2>إِلَيْكِ... كَلِمَاتٌ لَمْ أَقُلْهَا كُلَّهَا 🫀</h2>
+    <p>رُبَّمَا تَقْرَأُهَا الآن، وَلَكِنِّي كَتَبْتُهَا مِنْ قَلْبِي.</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>أَنْتِ لَسْتَ شَخْصًا عَابِرًا 🌷</h3>
+      <p>
+        فِي حَيَاتِي أَشْخَاصٌ كَثِيرُونَ،
+        وَلَكِنْ قَلِيلًا مَنْ يَتْرُكُونَ أَثَرًا حَقِيقِيًّا.
+
+        أَنْتَ مِنْ أُولَئِكَ الَّذِينَ لَا يَمُرُّونَ بِهُدُوء...
+        بَلْ يَبْقَى مِنْهُمْ شَيْءٌ فِي القَلْب.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>أُحِبُّ تَفَاصِيلَكِ 💗</h3>
+      <p>
+        لَا أَقْصِدُ شَيْئًا وَاحِدًا فَقَط...
+
+        أُحِبُّ طَرِيقَةَ كَلَامُكِ، 
+        وَضَحِكَتِكِ،
+        وَتَفَاصِيلَكِ الصَّغِيرَةَ الَّتِي رُبَّمَا لَا تَنْتَبِهُ لَهَا.
+
+        أَحْيَانًا أَبْسَطُ الأَشْيَاءِ مِنْكِ
+        تَكُونُ أَكْبَرَ شَيْءٍ فِي يَوْمِي.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>وَإِنْ تَغَيَّرَتِ الأَيَّام... 🫶</h3>
+      <p>
+        قَدْ تَتَغَيَّرُ الأَيَّام،
+        وَقَدْ نَمُرُّ بِلَحَظَاتٍ لَا تَكُونُ سَهْلَة.
+
+        لَكِنِّي لَا أُرِيدُ أَنْ تَكُونَ أَوَّلُ فِكْرَةٍ لَدَيْنَا
+        هِيَ التَّخَلِّي.
+
+        أُرِيدُ أَنْ نَتَذَكَّرَ دَائِمًا لِمَاذَا بَدَأْنَا.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>أُرِيدُ أَنْ أَرَى القَادِمَ مَعَكِ 🌙</h3>
+      <p>
+        لَا أَعِدُكِ بِحَيَاةٍ مِثَالِيَّة،
+        وَلَا أَعِدُكِ أَنَّ كُلَّ شَيْءٍ سَيَكُونُ سَهْلًا.
+
+        وَلَكِنِّي أَعِدُكِ أَنَّنِي سَأَحْرِصُ
+        أَنْ تَكُونَ لَكَ مَكَانَةٌ فِي كُلِّ خُطْوَةٍ أُرِيدُ أَنْ أَمْشِيَهَا.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="special-message">
+
+    <h2>وَشَيْءٌ آخَر... 🫀</h2>
+
+    <p>
+      إِذَا سَأَلْتِنِي يَوْمًا:
+      «مَا الَّذِي أُرِيدُهُ مِنْ كُلِّ هَذَا؟»
+    </p>
+
+    <p>
+      فَالإِجَابَةُ بَسِيطَة...
+      أُرِيدُ أَنْ تَبْقَى هَذِهِ الحِكَايَةُ شَيْئًا
+      نَنْظُرُ إِلَيْهِ بَعْدَ سَنَوَاتٍ وَنَقُولُ:
+      <br>
+      <strong>«الحَمْدُ لِلَّهِ أَنَّنَا لَمْ نَسْتَسْلِمْ.»</strong>
+    </p>
+
+  </div>
+
+</section>
+
+<!-- الخاتمة -->
+<section class="ending">
+
+  <div class="ending-box">
+
+    <div class="ending-heart">🫀</div>
+
+    <h2>وَأَمَّا خَاتِمَةُ رِسَالَتِي...</h2>
+
+    <p>
+      لَا أُرِيدُ أَنْ أَقُولَ لَكِ
+      «أَنْتِ أَجْمَلُ شَخْصٍ فِي العَالَم»
+      فَقَط لِأَنَّهَا جُمْلَةٌ جَمِيلَة.
+    </p>
+
+    <p>
+      أُرِيدُ أَنْ أَقُولَ شَيْئًا أَصْدَق:
+      <br>
+      <strong>
+        أَنْتِ الشَّخْصُ الَّذِي أَرَدْتُ أَنْ أَصْنَعَ لَهُ
+        مَكَانًا خَاصًّا فِي قَلْبِي.
+      </strong>
+    </p>
+
+    <p>
+      وَإِنْ كَانَتْ هَذِهِ الصَّفْحَةُ مُجَرَّدَ كَلِمَاتٍ وَصُوَرٍ وَذِكْرَيَات...
+      فَأَنَا أَعْرِفُ أَنَّ أَجْمَلَ شَيْءٍ فِيهَا
+      هُوَ الشَّخْصُ الَّذِي كُتِبَتْ مِنْ أَجْلِهِ.
+    </p>
+
+    <p class="final-line">
+      لِذَلِكَ، إِذَا فَتَحْتَ هَذِهِ الرِّسَالَةَ فِي يَوْمٍ بَعِيد...
+      <br>
+      فَاعْرِفِ أَنِّي كَتَبْتُهَا فِي يَوْمٍ
+      كَانَ فِيهِ قَلْبِي يَخْتَارُكَ أَيْضًا. 🫀
+    </p>
+
+    <div class="signature">
+      وَهَذِهِ لَيْسَتْ نِهَايَةَ الرِّسَالَة...
+      <br>
+      هَذِهِ نِهَايَةُ الصَّفْحَةِ فَقَط. 🥺
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="footer-content">
+    <img src="افتار.png" class="footer-logo">
+
+    <span>
+      مزتي كتكوتتي 😫
+    </span>
+  </div>
+
+  <div>
+    كُتِبَتْ بِقَلْبٍ صَادِق 🌷
+  </div>
+
+</footer>
+
+<script>
+
+/* قائمة الصفحات */
+
+function togglePages(){
+  document.getElementById("pages").classList.toggle("active");
+}
+
+
+/* الوضع الليلي */
+
+function toggleNight(){
+
+  document.body.classList.toggle("night");
+
+  const btn=document.getElementById("modeBtn");
+
+  if(document.body.classList.contains("night")){
+    btn.innerHTML="☀";
+  }else{
+    btn.innerHTML="☾";
+  }
+
+}
+
+
+/* قلوب متساقطة */
+
+function createHeart(){
+
+  const heart=document.createElement("div");
+
+  heart.className="heart";
+
+  const hearts=["♡","♥","🫀","💗","🌷"];
+
+  heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+  heart.style.left=Math.random()*100+"vw";
+
+  heart.style.fontSize=(12+Math.random()*18)+"px";
+
+  heart.style.animationDuration=(5+Math.random()*6)+"s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },12000);
+
+}
+
+setInterval(createHeart,900);
+
+</script>
+
+</body>
+</html>
