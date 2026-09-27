@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>هَدِيَّتِي لَكَ ↫🎁 | ♡</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:#fff;
+  color:#4a1b2c;
+  overflow-x:hidden;
+  transition:.5s ease;
+}
+
+
+/* =========================
+   الوضع الليلي
+========================= */
+
+body.night{
+  background:#16090f;
+  color:#fff;
+}
+
+body.night .gift-section,
+body.night .letter-section{
+  background:#211019;
+  border-color:#4d2736;
+}
+
+body.night .gift-box{
+  background:linear-gradient(145deg,#6d2747,#9e3c67);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+body.night .letter{
+  background:#2a141f;
+  border-color:#603044;
+}
+
+body.night .letter p{
+  color:#eadce1;
+}
+
+body.night .section-title{
+  color:#ff9fbd;
+}
+
+body.night footer{
+  background:#10070c;
+  border-color:#42202e;
+}
+
+body.night .pages-menu{
+  background:#241019;
+  border-color:#54293a;
+}
+
+body.night .pages-menu a{
+  background:#351722;
+  color:#fff;
+}
+
+body.night .circle-btn{
+  background:#241019;
+  border-color:#54293a;
+}
+
+
+/* =========================
+   الأزرار العلوية
+========================= */
+
+.circle-btn{
+  position:fixed;
+  top:20px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:rgba(255,255,255,.95);
+  color:#c72d67;
+  border:1px solid #f2bfd1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  cursor:pointer;
+  z-index:100;
+  transition:.3s;
+  box-shadow:0 6px 20px rgba(120,20,60,.12);
+}
+
+.circle-btn:hover{
+  transform:scale(1.08);
+}
+
+.mode-btn{
+  left:20px;
+}
+
+.home-btn{
+  right:20px;
+}
+
+
+/* =========================
+   قائمة الصفحات
+========================= */
+
+.pages-menu{
+  position:fixed;
+  top:75px;
+  right:20px;
+  background:#fff;
+  padding:18px;
+  border-radius:18px;
+  display:none;
+  flex-direction:column;
+  gap:12px;
+  z-index:110;
+  border:1px solid #f2c4d5;
+  box-shadow:0 15px 40px rgba(100,20,50,.16);
+}
+
+.pages-menu.active{
+  display:flex;
+}
+
+.pages-menu a{
+  color:#7b2948;
+  text-decoration:none;
+  background:#fff0f5;
+  padding:11px 18px;
+  border-radius:50px;
+  min-width:175px;
+  text-align:center;
+  transition:.3s;
+}
+
+.pages-menu a:hover{
+  background:#f8d0df;
+  transform:translateX(-3px);
+}
+
+
+/* =========================
+   الواجهة
+========================= */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  min-height:650px;
+  overflow:hidden;
+}
+
+.hero .bg-videos{
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-rows:repeat(5,1fr);
+  z-index:0;
+}
+
+.hero .bg-videos video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(45,5,22,.58);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+  color:#fff;
+  padding:0 20px;
+}
+
+.hero-content h1{
+  font-size:2.7em;
+  margin:0 0 15px;
+  text-shadow:0 5px 25px rgba(0,0,0,.5);
+}
+
+.hero-content p{
+  font-size:1.15em;
+  line-height:2;
+  max-width:700px;
+  margin:0 auto 25px;
+  text-shadow:0 3px 15px rgba(0,0,0,.5);
+}
+
+.hero-image{
+  width:100%;
+  max-width:430px;
+  max-height:280px;
+  object-fit:cover;
+  margin:20px auto;
+  border-radius:22px;
+  display:block;
+  border:2px solid rgba(255,255,255,.5);
+  box-shadow:0 15px 45px rgba(0,0,0,.35);
+}
+
+
+/* =========================
+   زر اكتشاف الهدية
+========================= */
+
+.discover-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 28px;
+  border:0;
+  border-radius:50px;
+  background:#fff;
+  color:#c72d67;
+  font-family:'Tajawal',sans-serif;
+  font-weight:bold;
+  font-size:1em;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  transition:.3s;
+}
+
+.discover-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+
+/* =========================
+   قسم الهدايا المتعددة
+========================= */
+
+.gift-section{
+  padding:80px 20px;
+  background:#fff8fa;
+  text-align:center;
+  border-bottom:1px solid #f3cada;
+  transition:.5s;
+}
+
+.section-title{
+  font-size:2.3em;
+  color:#c72d67;
+  margin:0 0 15px;
+}
+
+.section-subtitle{
+  color:#916072;
+  line-height:1.9;
+  margin:0 auto 45px;
+  max-width:650px;
+}
+
+/* حاوية الهدايا المرتبة */
+.gifts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gift-card {
+  background: #fff;
+  border: 1px solid #f2c7d7;
+  border-radius: 25px;
+  padding: 20px;
+  width: 260px;
+  box-shadow: 0 10px 30px rgba(150,30,70,.06);
+  transition: .3s;
+}
+
+.gift-card:hover {
+  transform: translateY(-5px);
+}
+
+.gift-box{
+  position:relative;
+  width:100%;
+  height:170px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ff82a9,#d93670);
+  box-shadow:0 10px 25px rgba(217,54,112,.28);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.gift-box i{
+  font-size:70px;
+  color:#fff;
+  filter:drop-shadow(0 5px 5px rgba(0,0,0,.15));
+}
+
+.gift-ribbon{
+  position:absolute;
+  background:#fff;
+  opacity:.9;
+}
+
+.ribbon-v{
+  width:30px;
+  height:100%;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.ribbon-h{
+  width:100%;
+  height:30px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* الصور التي ستفتح داخل كل هدية */
+.opened-photo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:20px;
+  display:none;
+}
+
+.gift-label{
+  margin-top:15px;
+  color:#a52d56;
+  font-weight:bold;
+  font-size: 0.95em;
+}
+
+
+/* =========================
+   الرسالة
+========================= */
+
+.letter-section{
+  padding:80px 20px;
+  background:#fff;
+  text-align:center;
+  transition:.5s;
+}
+
+.letter{
+  max-width:800px;
+  margin:40px auto 0;
+  padding:40px 30px;
+  background:#fff8fb;
+  border:1px solid #f2c7d7;
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(150,30,70,.08);
+  position:relative;
+}
+
+.letter::before{
+  content:"♡";
+  position:absolute;
+  top:-25px;
+  left:50%;
+  transform:translateX(-50%);
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#c72d67;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+}
+
+.letter h2{
+  color:#c72d67;
+  margin-bottom:25px;
+}
+
+.letter p{
+  line-height:2.2;
+  color:#704354;
+  font-size:1.05em;
+  margin:0;
+}
+
+
+/* =========================
+   الصوت
+========================= */
+
+.audio-title{
+  margin-top:45px;
+  color:#c72d67;
+  font-weight:bold;
+}
+
+.audio-player{
+  display:block;
+  width:min(600px,90%);
+  margin:20px auto;
+  height:45px;
+  border-radius:15px;
+}
+
+
+/* =========================
+   زر النهاية
+========================= */
+
+.final-message{
+  margin-top:45px;
+  color:#9b6376;
+  line-height:2;
+}
+
+.final-message strong{
+  display:block;
+  color:#c72d67;
+  font-size:1.2em;
+  margin-top:10px;
+}
+
+
+/* =========================
+   الفوتر
+========================= */
+
+footer{
+  background:#fff8fa;
+  border-top:1px solid #f2c7d7;
+  padding:25px 15px;
+  text-align:center;
+  color:#956174;
+  transition:.5s;
+}
+
+.footer-content{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.footer-logo{
+  width:40px;
+  border-radius:50%;
+}
+
+footer span{
+  font-size:14px;
+}
+
+footer div:last-child{
+  margin-top:8px;
+  font-size:13px;
+  color:#b17b8d;
+}
+
+
+/* =========================
+   قلوب متحركة
+========================= */
+
+.heart{
+  position:fixed;
+  top:-20px;
+  color:#f06c96;
+  z-index:3;
+  pointer-events:none;
+  user-select:none;
+  animation:heartFall 9s linear infinite;
+  opacity:.6;
+}
+
+@keyframes heartFall{
+
+  0%{
+    transform:translateY(0) translateX(0) rotate(0);
+  }
+
+  50%{
+    transform:translateY(50vh) translateX(35px) rotate(180deg);
+  }
+
+  100%{
+    transform:translateY(110vh) translateX(-25px) rotate(360deg);
+  }
+
+}
+
+
+/* =========================
+   الجوال
+========================= */
+
+@media(max-width:700px){
+
+  .hero-content h1{
+    font-size:2em;
+  }
+
+  .hero-content p{
+    font-size:1em;
+  }
+
+  .hero-image{
+    max-width:90%;
+  }
+
+  .section-title{
+    font-size:1.8em;
+  }
+
+  .gift-card{
+    width:100%;
+    max-width:320px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="circle-btn mode-btn" onclick="toggleNight()" id="modeBtn">
+  <i class="fa-solid fa-moon"></i>
+</div>
+
+<div class="circle-btn home-btn" onclick="togglePages()">
+  ♡
+</div>
+
+
+<div class="pages-menu" id="pages">
+
+  <a href="index.html">الرئيسية</a>
+
+  <a href="elite.html">ذِكْرَيَاتَ</a>
+
+  <a href="branches.html">أَحْلَامُنَاَ</a>
+
+  <a href="rules.html">وَعْدِي لَكَ</a>
+
+  <a href="achievements.html">الانجازاتَ</a>
+
+  <a href="docs.html">هَدِيَّتِي لَكَ</a>
+
+  <a href="promotions.html">رِسَالَة خَاصَّة لَكَ</a>
+
+</div>
+
+
+<section class="hero">
+
+  <div class="bg-videos">
+
+    <video autoplay muted loop playsinline>
+      <source src="y1.mp4" type="video/mp4">
+    </video>
+
+    <video autoplay muted loop playsinline>
+      <source src="y2.mp4" type="video/mp4">
+    </video>
+
+    <video autoplay muted loop playsinline>
+      <source src="y3.mp4" type="video/mp4">
+    </video>
+
+    <video autoplay muted loop playsinline>
+      <source src="y4.mp4" type="video/mp4">
+    </video>
+
+    <video autoplay muted loop playsinline>
+      <source src="y5.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+  <div class="overlay"></div>
+
+
+  <div class="hero-content">
+
+    <h1>
+      هَــدِيَّــتِــي لَــكَ 🎁🫀
+    </h1>
+
+    <p>
+
+      لَمْ أَجِدْ شَيْئًا أَجْمَلَ مِنْ أَنْ أَجْمَعَ
+      بَعْضًا مِنْي فِي هَذِهِ الصَّفْحَة...
+
+      <br>
+
+      هَذِهِ لَيْسَتْ هَدِيَّةً تُفْتَحُ وَتَنْتَهِي،
+      بَلْ شَيْءٌ أَرَدْتُ أَنْ يَبْقَى لَكِِ.
+
+      <br>
+
+      فَافْتَحِهَا بِهُدُوء... ♡
+
+    </p>
+
+    <img src="y.jpg" class="hero-image">
+
+    <button class="discover-btn" onclick="scrollToGift()">
+      <i class="fa-solid fa-gift"></i>
+      اِفْتَحْ هَدِيَّتَكَ
+    </button>
+
+  </div>
+
+</section>
+
+
+<section class="gift-section" id="gift">
+
+  <h2 class="section-title">
+    هَدَايَا خَاصَّةً أَخْبَأْتُهَا هُنَا لَكِ 🎁
+  </h2>
+
+  <p class="section-subtitle">
+
+     قَبْلَ أَنْ تَفْتَحَهَا... تَذَكَّرْ أَنَّ قِيمَةَ الهَدِيَّةِ لَيْسَتْ فِي مَا بَدَاخِلِهَا، بَلْ فِي الشَّخْصِ الَّذِي صَنَعَهَا مِنْ أَجْلِكَ. 🫀
+
+  </p>
+
+
+  <div class="gifts-container">
+
+    <div class="gift-card">
+      <div class="gift-box" id="box1" onclick="openGiftBox(1)">
+        <div class="gift-ribbon ribbon-v" id="rv1"></div>
+        <div class="gift-ribbon ribbon-h" id="rh1"></div>
+        <i class="fa-solid fa-gift" id="icon1"></i>
+        <img src="محمد.jpg" class="opened-photo" id="photo1" alt="محمد">
+      </div>
+      <div class="gift-label" id="label1">🎁 الهدية الأولى</div>
+    </div>
+
+    <div class="gift-card">
+      <div class="gift-box" id="box2" onclick="openGiftBox(2)">
+        <div class="gift-ribbon ribbon-v" id="rv2"></div>
+        <div class="gift-ribbon ribbon-h" id="rh2"></div>
+        <i class="fa-solid fa-gift" id="icon2"></i>
+        <img src="نوني.jpg" class="opened-photo" id="photo2" alt="نوني">
+      </div>
+      <div class="gift-label" id="label2">🎁 الهدية الثانية</div>
+    </div>
+
+    <div class="gift-card">
+      <div class="gift-box" id="box3" onclick="openGiftBox(3)">
+        <div class="gift-ribbon ribbon-v" id="rv3"></div>
+        <div class="gift-ribbon ribbon-h" id="rh3"></div>
+        <i class="fa-solid fa-gift" id="icon3"></i>
+        <img src="نور.jpg" class="opened-photo" id="photo3" alt="نور">
+      </div>
+      <div class="gift-label" id="label3">🎁 الهدية الثالثة</div>
+    </div>
+
+    <div class="gift-card">
+      <div class="gift-box" id="box4" onclick="openGiftBox(4)">
+        <div class="gift-ribbon ribbon-v" id="rv4"></div>
+        <div class="gift-ribbon ribbon-h" id="rh4"></div>
+        <i class="fa-solid fa-gift" id="icon4"></i>
+        <img src="بحبك.jpg" class="opened-photo" id="photo4" alt="بحبك">
+      </div>
+      <div class="gift-label" id="label4">🎁 الهدية الرابعة</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="letter-section" id="letterSection">
+
+  <h2 class="section-title">
+    الرِّسَالَةُ الَّتِي فِي القَلْب 💌
+  </h2>
+
+  <div class="letter">
+
+    <h2>
+      إِلَيْكِ... 🫀
+    </h2>
+
+    <p>
+
+      رُبَّمَا لَا أَمْلِكُ أَغْلَى هَدِيَّةٍ فِي العَالَم،
+      وَلَا أَسْتَطِيعُ أَنْ أَضَعَ كُلَّ مَا فِي قَلْبِي
+      دَاخِلَ مَوْقِع.
+
+      <br><br>
+
+      لَكِنِّي أَسْتَطِيعُ أَنْ أَهْدِيَكَ شَيْئًا
+      صَنَعْتُهُ وَأَنَا أُفَكِّرُ فِيكِ.
+
+      <br><br>
+
+      أَهْدِيكِ ذِكْرَى،
+      وَأَهْدِيكِ كَلِمَة،
+      وَأَهْدِيكِ مَكَانًا صَغِيرًا
+      يَحْمِلُ شَيْئًا مِنْ مَشْاعِري.
+
+      <br><br>
+
+      وَإِذَا فَتَحْتَ هَذِهِ الصَّفْحَةَ فِي يَوْمٍ بَعِيد،
+      فَأُرِيدُكِ أَنْ تَتَذَكَّرِ شَيْئًا وَاحِدًا:
+
+      <br><br>
+
+      أَنَّ هَذِهِ الهَدِيَّةَ كُتِبَتْ لَكِ أَنْتِ، 
+      وَلَيْسَ لِأَيِّ شَخْصٍ آخَر.
+
+      <br><br>
+
+      وَمَهْمَا مَرَّ الوَقْت...
+      سَتَبْقَى هَذِهِ الصَّفْحَةُ
+      شَاهِدَةً عَلَى أَنَّكِ كُنْتِ
+      وَمَا زِلْتِ شَيْئًا خَاصًّا فِيني
+
+      <br><br>
+
+      🫀
+
+    </p>
+
+  </div>
+
+
+  <div class="audio-title">
+    وَهَذَا الصَّوْتُ... جُزْءٌ آخَرُ مِنَ الهَدِيَّة 🎧
+  </div>
+
+  <audio class="audio-player" controls>
+
+    <source src="y.mp3" type="audio/mpeg">
+
+  </audio>
+
+
+  <div class="final-message">
+
+    لَمْ تَكُنْ هَذِهِ صَفْحَةً فَقَط...
+
+    <strong>
+      كَانَتْ هَدِيَّتِي لَلِ . 🫀
+    </strong>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-content">
+
+    <img src="افتار.png" class="footer-logo">
+
+    <span>
+      © 🫀 - كُلُّ الحُقُوقِ مَحْفُوظَة
+    </span>
+
+  </div>
+
+  <div>
+    🥺🫀
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   قائمة الصفحات
+========================= */
+
+function togglePages(){
+  document.getElementById("pages").classList.toggle("active");
+}
+
+
+/* =========================
+   الوضع الليلي
+========================= */
+
+function toggleNight(){
+  document.body.classList.toggle("night");
+  const icon = document.getElementById("modeBtn").querySelector("i");
+  if(document.body.classList.contains("night")){
+    icon.className = "fa-solid fa-sun";
+  }else{
+    icon.className = "fa-solid fa-moon";
+  }
+}
+
+
+/* =========================
+   النزول للهدية
+========================= */
+
+function scrollToGift(){
+  document.getElementById("gift").scrollIntoView({ behavior:"smooth" });
+}
+
+
+/* =========================
+   فتح الهدايا الفردية (كل هدية تفتح صورتها الخاصة)
+========================= */
+
+function openGiftBox(num) {
+  // إخفاء الأيقونة والشبرطات الخاصة بهذه الهدية فقط
+  document.getElementById("icon" + num).style.display = "none";
+  document.getElementById("rv" + num).style.display = "none";
+  document.getElementById("rh" + num).style.display = "none";
+
+  // إظهار الصورة الخاصة بهذه الهدية
+  document.getElementById("photo" + num).style.display = "block";
+
+  // تغيير النص التوضيحي للهدية
+  const labels = ["💗 تم فتح الهدية", "💗 تم فتح الهدية", "💗 تم فتح الهدية", "💗 تم فتح الهدية"];
+  document.getElementById("label" + num).textContent = labels[num - 1];
+}
+
+
+/* =========================
+   القلوب
+========================= */
+
+const heartCount = 25;
+
+for(let i=0;i<heartCount;i++){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (Math.random()*15+10) + "px";
+  heart.style.animationDuration = (Math.random()*5+6) + "s";
+  heart.style.animationDelay = (Math.random()*8) + "s";
+  heart.textContent = "♡";
+  document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
