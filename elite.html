@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ذكرياتنا ↫🫀 | ♡</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:#fff;
+  color:#ff4f9a;
+  transition:.4s;
+}
+
+/* الوضع الليلي */
+body.night{
+  background:#160811;
+  color:#fff;
+}
+
+body.night .section{
+  background:#24121d;
+  border-color:#3b1a29;
+}
+
+body.night footer{
+  background:#10050b;
+  border-color:#3b1a29;
+}
+
+body.night .circle-btn{
+  background:#2a101c;
+}
+
+body.night .pages-menu{
+  background:#24121d;
+}
+
+body.night .pages-menu a{
+  background:#3a1a2a;
+  color:#fff;
+}
+
+body.night .card{
+  background:#10050b;
+  border-color:#3b1a29;
+}
+
+body.night .desc{
+  background:#24121d;
+  border-color:#3b1a29;
+  color:#f0dce5;
+}
+
+
+/* =========================
+   زر الوضع الليلي
+========================= */
+
+.circle-btn{
+  position:fixed;
+  top:20px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#ff4f9a;
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:20px;
+  cursor:pointer;
+
+  z-index:1000;
+
+  transition:.3s;
+  box-shadow:0 5px 20px rgba(255,79,154,.25);
+}
+
+.circle-btn:hover{
+  background:#e52f7d;
+  transform:scale(1.05);
+}
+
+.mode-btn{
+  left:20px;
+}
+
+.home-btn{
+  right:20px;
+}
+
+
+/* =========================
+   قائمة الصفحات
+========================= */
+
+.pages-menu{
+  position:fixed;
+
+  top:75px;
+  right:20px;
+
+  background:#fff;
+
+  padding:20px;
+
+  border-radius:15px;
+
+  display:none;
+  flex-direction:column;
+  gap:12px;
+
+  z-index:999;
+
+  box-shadow:0 5px 25px rgba(255,79,154,.25);
+}
+
+.pages-menu.active{
+  display:flex;
+}
+
+.pages-menu a{
+  color:#ff4f9a;
+
+  text-decoration:none;
+
+  background:#ffe6f0;
+
+  padding:11px 18px;
+
+  border-radius:50px;
+
+  min-width:170px;
+
+  text-align:center;
+
+  transition:.3s;
+}
+
+.pages-menu a:hover{
+  background:#ff4f9a;
+  color:#fff;
+}
+
+
+/* =========================
+   المقدمة
+========================= */
+
+.hero{
+  position:relative;
+
+  height:50vh;
+  max-height:500px;
+
+  overflow:hidden;
+
+  margin-bottom:20px;
+
+  border-radius:12px;
+}
+
+.hero img{
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:rgba(255,79,154,.25);
+}
+
+.hero-content{
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  width:90%;
+
+  text-align:center;
+
+  z-index:2;
+
+  color:#fff;
+}
+
+.hero-content h1{
+  font-size:2em;
+  margin-bottom:10px;
+}
+
+.hero-content p{
+  font-size:1.1em;
+  line-height:1.8;
+}
+
+
+/* =========================
+   القسم
+========================= */
+
+.section{
+  background:#fff0f6;
+
+  padding:40px 20px;
+
+  border-radius:12px;
+
+  margin-bottom:20px;
+
+  border:1px solid #ffd0e2;
+
+  transition:.4s;
+}
+
+.section > video{
+  width:100%;
+
+  max-height:500px;
+
+  object-fit:cover;
+
+  border-radius:12px;
+
+  margin-bottom:20px;
+}
+
+
+/* =========================
+   البطاقات
+========================= */
+
+.cards{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+
+  border:1px solid #ffd0e2;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card img{
+  width:100%;
+  height:230px;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+.card-content{
+  padding:18px;
+
+  text-align:center;
+}
+
+.card-content h3{
+  margin:5px 0;
+
+  color:#ff4f9a;
+
+  font-size:1.3em;
+}
+
+.card-content span{
+  font-size:.9em;
+
+  color:#c95b87;
+}
+
+.card-content button{
+  margin-top:10px;
+
+  background:#ff4f9a;
+
+  border:none;
+
+  color:#fff;
+
+  padding:9px 22px;
+
+  border-radius:20px;
+
+  cursor:pointer;
+
+  font-family:inherit;
+
+  font-size:15px;
+}
+
+.card-content button:hover{
+  background:#e52f7d;
+}
+
+
+/* =========================
+   النص المخفي
+========================= */
+
+.desc{
+  display:none;
+
+  padding:15px;
+
+  font-size:.95em;
+
+  line-height:1.8;
+
+  background:#fff0f6;
+
+  border-top:1px solid #ffd0e2;
+
+  color:#8f315b;
+}
+
+
+/* =========================
+   العداد
+========================= */
+
+.counter{
+  text-align:center;
+
+  font-size:1.1em;
+
+  line-height:2;
+
+  margin-top:30px;
+
+  color:#c95b87;
+
+  padding:20px;
+
+  background:rgba(255,255,255,.6);
+
+  border-radius:15px;
+}
+
+body.night .counter{
+  background:#10050b;
+  color:#ff9fc4;
+}
+
+
+/* =========================
+   الفوتر
+========================= */
+
+footer{
+  background:#fff;
+
+  border-top:1px solid #ffd0e2;
+
+  padding:20px 10px;
+
+  text-align:center;
+
+  transition:.4s;
+}
+
+.footer-content{
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+}
+
+.footer-logo{
+  width:40px;
+  height:40px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+}
+
+footer span{
+  font-size:14px;
+
+  color:#ff4f9a;
+}
+
+footer div:last-child{
+  margin-top:8px;
+
+  font-size:13px;
+
+  color:#c95b87;
+}
+
+
+/* =========================
+   الجوال
+========================= */
+
+@media(max-width:700px){
+
+  .hero-content h1{
+    font-size:1.7em;
+  }
+
+  .hero-content p{
+    font-size:.95em;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     زر الوضع الليلي
+========================= -->
+
+<div
+class="circle-btn mode-btn"
+onclick="toggleNight()"
+id="modeBtn">
+
+<i class="fas fa-moon"></i>
+
+</div>
+
+
+<!-- =========================
+     زر الصفحات
+========================= -->
+
+<div
+class="circle-btn home-btn"
+onclick="togglePages()">
+
+♡ 
+
+</div>
+
+
+<!-- =========================
+     قائمة الصفحات
+========================= -->
+
+<div class="pages-menu" id="pages">
+
+<a href="index.html">الرئيسية</a>
+
+<a href="elite.html">ذكرياتنا</a>
+
+<a href="branches.html">أحلامنا</a>
+
+<a href="rules.html">وعدي لك</a>
+
+<a href="achievements.html">الإنجازات</a>
+
+<a href="docs.html">هديتي لك</a>
+
+<a href="promotions.html">رسالة خاصة لك</a>
+
+</div>
+
+
+<!-- =========================
+     المقدمة
+========================= -->
+
+<section class="hero">
+
+<img src="sss.jpg" alt="ذكرياتنا">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+ذِكْــرَيَــاتُــنَــا ↫🫀 | ♡
+</h1>
+
+<p>
+
+هُنَا حَيْثُ تَبْقَى أَجْمَلُ لَحَظَاتِنَا،
+وَحَيْثُ تَحْفَظُ الذَّاكِرَةُ كُلَّ تَفْصِيلٍ جَمَعَنَا،
+لِتَبْقَى حِكَايَتُنَا حَيَّةً مَهْمَا مَرَّ الزَّمَنُ.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     المحتوى
+========================= -->
+
+<section class="section">
+
+
+<!-- الفيديو الرئيسي -->
+
+<video controls playsinline>
+
+<source src="sss2.mp4" type="video/mp4">
+
+متصفحك لا يدعم تشغيل الفيديو.
+
+</video>
+
+
+<!-- =========================
+     الذكريات
+========================= -->
+
+<div class="cards">
+
+
+<!-- الذكرى 1 -->
+
+<div class="card">
+
+<img src="ذكريات1.jpg" alt="أول ذكرى">
+
+<div class="card-content">
+
+<h3>
+أَوَّلُ ذِكْرَى 🫀
+</h3>
+
+<span>♡</span>
+
+<br>
+
+<button onclick="toggleDesc(this)">
+عرض
+</button>
+
+</div>
+
+<div class="desc">
+
+هُنَا نَضَعُ أَوَّلَ ذِكْرَى جَمَعَتْنَا،
+أَوَّلَ لَحْظَةٍ شَعَرْنَا فِيهَا
+أَنَّ هَذِهِ الحِكَايَةَ لَنْ تَكُونَ عَابِرَةً،
+بَلْ سَتَكُونُ شَيْئًا خَاصًّا يَبْقَى فِي القَلْبِ.
+
+</div>
+
+</div>
+
+
+<!-- الذكرى 2 -->
+
+<div class="card">
+
+<img src="ذكريات2.jpg" alt="أجمل لحظاتنا">
+
+<div class="card-content">
+
+<h3>
+أَجْمَلُ لَحْظَاتِنَا 🌷
+</h3>
+
+<span>♡</span>
+
+<br>
+
+<button onclick="toggleDesc(this)">
+عرض
+</button>
+
+</div>
+
+<div class="desc">
+
+هُنَا تُحْفَظُ اللَّحَظَاتُ
+الَّتِي جَعَلَتْ أَيَّامَنَا أَجْمَلَ،
+مِنْ ضَحِكَاتٍ وَكَلِمَاتٍ
+وَمَوَاقِفَ صَغِيرَةٍ
+أَصْبَحَتْ بِالنِّسْبَةِ لَنَا كَبِيرَةً جِدًّا.
+
+</div>
+
+</div>
+
+
+<!-- الذكرى 3 -->
+
+<div class="card">
+
+<img src="ذكريات3.jpg" alt="لحظة لا تنسى">
+
+<div class="card-content">
+
+<h3>
+لَحْظَةٌ لا تُنْسَى 🌙
+</h3>
+
+<span>♡</span>
+
+<br>
+
+<button onclick="toggleDesc(this)">
+عرض
+</button>
+
+</div>
+
+<div class="desc">
+
+بَعْضُ اللَّحَظَاتِ لا تَحْتَاجُ إِلَى سَبَبٍ لِتَبْقَى،
+فَهِيَ تَبْقَى لِأَنَّهَا كَانَتْ
+مَعَ الشَّخْصِ الَّذِي نُحِبُّهُ،
+وَهَذَا وَحْدَهُ كَافٍ.
+
+</div>
+
+</div>
+
+
+<!-- الذكرى 4 -->
+
+<div class="card">
+
+<img src="ذكريات4.jpg" alt="ذكرى من قلبي">
+
+<div class="card-content">
+
+<h3>
+ذِكْرَى مِنْ قَلْبِي 💗
+</h3>
+
+<span>♡</span>
+
+<br>
+
+<button onclick="toggleDesc(this)">
+عرض
+</button>
+
+</div>
+
+<div class="desc">
+
+ذِكْرَى صَغِيرَةٌ فِي حَجْمِهَا،
+لَكِنَّهَا كَبِيرَةٌ فِي مَعْنَاهَا،
+وَكُلَّمَا عُدْنَا إِلَيْهَا
+شَعَرْنَا بِنَفْسِ الشُّعُورِ
+الَّذِي عِشْنَاهُ يَوْمَهَا.
+
+</div>
+
+</div>
+
+
+<!-- الذكرى 5 -->
+
+<div class="card">
+
+<img src="ذكريات5.jpg" alt="أيامنا معًا">
+
+<div class="card-content">
+
+<h3>
+أَيَّامُنَا مَعًا 🫶
+</h3>
+
+<span>♡</span>
+
+<br>
+
+<button onclick="toggleDesc(this)">
+عرض
+</button>
+
+</div>
+
+<div class="desc">
+
+أَيَّامٌ مَرَّتْ سَرِيعًا،
+لَكِنَّهَا تَرَكَتْ فِي القَلْبِ أَثَرًا لا يَمُرُّ،
+وَكُلُّ يَوْمٍ مِنْهَا
+كَانَ سَطْرًا جَدِيدًا فِي حِكَايَتِنَا.
+
+</div>
+
+</div>
+
+
+<!-- الذكرى 6 -->
+
+<div class="card">
+
+<img src="ذكريات6.jpg" alt="ذكريات للأبد">
+
+<div class="card-content">
+
+<h3>
+ذِكْرَيَاتٌ لِلأَبَدِ 🥹
+</h3>
+
+<span>♡</span>
+
+<br>
+
+<button onclick="toggleDesc(this)">
+عرض
+</button>
+
+</div>
+
+<div class="desc">
+
+لَنْ تَكُونَ هَذِهِ الذِّكْرَيَاتُ
+مُجَرَّدَ مَاضٍ،
+بَلْ سَتَبْقَى جُزْءًا مِنْ قِصَّتِنَا،
+نَعُودُ إِلَيْهَا كُلَّمَا اشْتَقْنَا
+لِتِلْكَ الأَيَّامِ وَلِذَلِكَ الشُّعُورِ.
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     العداد
+========================= -->
+
+<div class="counter" id="counter">
+
+جاري حساب مدة حكايتنا... ❤️
+
+</div>
+
+
+</section>
+
+
+<!-- =========================
+     الفوتر
+========================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<img
+src="افتار.png"
+class="footer-logo"
+alt="افتار">
+
+<span>
+© ذِكْرَيَاتُنَا 🫀 - جميع الحقوق محفوظة
+</span>
+
+</div>
+
+<div>
+حقوق التصميم 𝑴..𝑵♡
+</div>
+
+</footer>
+
+
+<!-- =========================
+     JavaScript
+========================= -->
+
+<script>
+
+
+/* =========================
+   فتح قائمة الصفحات
+========================= */
+
+function togglePages(){
+
+  const pages = document.getElementById("pages");
+
+  pages.classList.toggle("active");
+
+}
+
+
+/* =========================
+   الوضع الليلي
+========================= */
+
+function toggleNight(){
+
+  document.body.classList.toggle("night");
+
+  const icon =
+    document
+    .getElementById("modeBtn")
+    .querySelector("i");
+
+  if(
+    document.body.classList.contains("night")
+  ){
+
+    icon.className = "fas fa-sun";
+
+  }else{
+
+    icon.className = "fas fa-moon";
+
+  }
+
+}
+
+
+/* =========================
+   فتح وصف الذكرى
+========================= */
+
+function toggleDesc(button){
+
+  const desc =
+    button
+    .closest(".card")
+    .querySelector(".desc");
+
+  if(desc.style.display === "block"){
+
+    desc.style.display = "none";
+
+    button.textContent = "عرض";
+
+  }else{
+
+    desc.style.display = "block";
+
+    button.textContent = "إخفاء";
+
+  }
+
+}
+
+
+/* =========================
+   العداد
+========================= */
+
+/*
+   العداد يحفظ وقت البداية بشكل دائم
+   داخل المتصفح.
+
+   عند أول تشغيل:
+   يبدأ من:
+   500 يوم
+   10 ساعات
+   16 دقيقة
+   19 ثانية
+
+   بعد ذلك يتم حفظ وقت البداية،
+   لذلك عند الخروج من الموقع والعودة
+   يستمر الحساب من نفس النقطة.
+*/
+
+
+const elapsedTime =
+  (500 * 86400000) +
+  (10 * 3600000) +
+  (16 * 60000) +
+  (19 * 1000);
+
+
+/* اسم ثابت لحفظ وقت البداية */
+
+const counterStorageKey =
+  "our_story_start_time";
+
+
+/*
+   إذا كانت هذه أول مرة بعد التعديل،
+   يتم إنشاء وقت البداية وحفظه.
+
+   إذا كان موجودًا مسبقًا،
+   نستخدم نفس الوقت ولا نعيد إنشاءه.
+*/
+
+let startTime =
+  localStorage.getItem(counterStorageKey);
+
+
+if(!startTime){
+
+  startTime =
+    Date.now() - elapsedTime;
+
+  localStorage.setItem(
+    counterStorageKey,
+    startTime
+  );
+
+}else{
+
+  startTime =
+    Number(startTime);
+
+}
+
+
+/* =========================
+   تحديث العداد
+========================= */
+
+function updateCounter(){
+
+  const now =
+    Date.now();
+
+
+  let diff =
+    Math.floor(
+      (now - startTime) / 1000
+    );
+
+
+  /*
+     حماية من أي قيمة غير صحيحة
+  */
+
+  if(diff < 0){
+    diff = 0;
+  }
+
+
+  const days =
+    Math.floor(diff / 86400);
+
+  diff %= 86400;
+
+
+  const hours =
+    Math.floor(diff / 3600);
+
+  diff %= 3600;
+
+
+  const minutes =
+    Math.floor(diff / 60);
+
+
+  const seconds =
+    diff % 60;
+
+
+  document.getElementById("counter").innerHTML =
+  `
+  منذ بداية حكايتنا:
+  <br>
+  ${days} يوم •
+  ${hours} ساعة •
+  ${minutes} دقيقة •
+  ${seconds} ثانية
+  `;
+
+}
+
+
+/* تشغيل العداد مباشرة */
+
+updateCounter();
+
+
+/* تحديث كل ثانية */
+
+setInterval(
+  updateCounter,
+  1000
+);
+
+
+</script>
+
+</body>
+</html>
